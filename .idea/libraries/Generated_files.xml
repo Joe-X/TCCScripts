@@ -1,0 +1,25 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/scripts/tcc.dynamicheader.1.0.0.min.js" />
+        <item url="file://$PROJECT_DIR$/scripts/tcc.currentdate.1.0.0.min.js" />
+        <item url="file://$PROJECT_DIR$/scripts/jquery-3.1.1.min.js" />
+        <item url="file://$PROJECT_DIR$/scripts/tcc.asyncimageloader.1.0.0.min.js" />
+        <item url="file://$PROJECT_DIR$/scripts/tcc.map.1.0.0.min.js" />
+        <item url="file://$PROJECT_DIR$/scripts/temp.molarmassofgas.min.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/scripts/tcc.dynamicheader.1.0.0-compiled.js" />
+      <root url="file://$PROJECT_DIR$/scripts/jquery-3.1.1.min.min.js" />
+      <root url="file://$PROJECT_DIR$/scripts/tcc.dynamicheader.1.0.0.min.js" />
+      <root url="file://$PROJECT_DIR$/scripts/tcc.currentdate.1.0.0.min.js" />
+      <root url="file://$PROJECT_DIR$/scripts/jquery-3.1.1.min.js" />
+      <root url="file://$PROJECT_DIR$/scripts/tcc.asyncimageloader.1.0.0.min.js" />
+      <root url="file://$PROJECT_DIR$/scripts/tcc.map.1.0.0.min.js" />
+      <root url="file://$PROJECT_DIR$/scripts/temp.molarmassofgas.min.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>
