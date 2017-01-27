@@ -29,6 +29,20 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+/**
+ * <code>Map</code> implementation in javascript. Not designed to be used on
+ * large scale.
+ *
+ * @fileOverview This script implements <code>Map</code>, similar to that of
+ * Java's Collections framework.
+ * @version 1.0.0
+ * @author Joe (jieyouxu123@live.com)
+ * @namespace tcc
+ * @see {@link https://docs.oracle.com/javase/7/docs/api/java/util/Map.html}
+ * The original Java Map.
+ * @see {@link http://www.oschina.net/code/snippet_87799_566} The website of
+ * which this script is adapted from.
+ */
 var tcc = (function (MODULE) {
     "use strict";
     
@@ -73,14 +87,14 @@ var tcc = (function (MODULE) {
         this.elements = [];
         
         /**
-        * Returns the size of the <code>Map</code>.
-        *
-        * @returns {Number} the size of the <code>Map</code>
-        */
+         * Returns the size of the <code>Map</code>.
+         *
+         * @returns {Number} the size of the <code>Map</code>
+         */
         this.size = function () {
-           return this.elements.length;
+            return this.elements.length;
         };
-
+    
         /**
          * Returns whether the <code>Map</code> is empty or not.
          *

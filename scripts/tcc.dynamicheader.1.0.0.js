@@ -49,7 +49,6 @@ var tcc = (function (MODULE) {
      * used by other sub-modules.
      *
      * @type {Object}
-     *
      * @namespace tcc.misc
      * @memberOf tcc
      */
@@ -59,7 +58,6 @@ var tcc = (function (MODULE) {
      * Contains information about the misc sub-module.
      *
      * @type {Object}
-     *
      * @memberOf tcc.misc
      */
     MODULE.misc.ABOUT = MODULE.misc.ABOUT || {
