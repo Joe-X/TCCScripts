@@ -102,6 +102,10 @@ var tcc = (function (MODULE) {
             " tcc.map as a dependency.");
     }
     
+    // Debug purposes.
+    MODULE.debug = MODULE.debug || function () {
+        };
+    
     /**
      * Asynchronous Image Loader.
      *
@@ -109,107 +113,8 @@ var tcc = (function (MODULE) {
      */
     MODULE.resources.asyncImageLoader = MODULE.resources.asyncImageLoader || {};
     
-    /**
-     * Returns 2D array which maps an image object to its respective src string.
-     *
-     * @param {!Object[]} imageObjectArray
-     * @param {!String[]} srcStringArray
-     * @returns {Map} Map with image object -> src string
-     * mappings. Returns null if the two arrays are not of equal sizes.
-     *
-     * @memberOf tcc.resources.asyncImageLoader
-     * @see tcc.misc.map
-     */
-    MODULE.resources.asyncImageLoader.newImageSrcCollection =
-        function (imageObjectArray, srcStringArray) {
-            // Return null if the two arrays are null or not of equal sizes.
-            if (!(imageObjectArray && srcStringArray) ||
-                imageObjectArray.length != srcStringArray.length) {
-                return null;
-            }
-            
-            var imageSrcMap = new MODULE.misc.Map();
-            
-            for (var i = 0;
-                 i < imageObjectArray.length && i < srcStringArray.length;
-                 i++) {
-                imageSrcMap.put(imageObjectArray[i], srcStringArray[i]);
-            }
-            
-            return imageSrcMap;
-        };
+    // TODO Implement Async Image Loading
     
-    /**
-     * Loads an image asynchronously.
-     *
-     * @param {!Object} imageObject
-     * @param {!String} srcString
-     *
-     * @memberOf tcc.resources.asyncImageLoader
-     */
-    MODULE.resources.asyncImageLoader.loadImage =
-        function (imageObject, srcString) {
-            // Returns to caller if either of the imageObject or srcString
-            // parameter is null.
-            if (!(imageObject && srcString && typeof imageObject === "object" &&
-                typeof srcString === "string")) {
-                return;
-            }
-            
-            var _downloadingImage    = new Image();
-            _downloadingImage.onload = function () {
-                //noinspection JSReferencingMutableVariableFromClosure
-                imageObject.src = this.src;
-            };
-            _downloadingImage.src    = srcString;
-        };
-    
-    /**
-     * Loads images asynchronously.
-     *
-     * @param {!Object} ImageSrcCollection - Map containing entries which
-     * maps image objects -> src strings.
-     *
-     * @memberOf tcc.resources.asyncImageLoader
-     * @see tcc.resources.asyncImageLoader.loadImage
-     */
-    MODULE.resources.asyncImageLoader.loadImages =
-        function (ImageSrcCollection) {
-            // Returns to caller if the ImageSrcCollection parameter is null.
-            if (!ImageSrcCollection ||
-                !(ImageSrcCollection instanceof MODULE.misc.Map)) {
-                return;
-            }
-            
-            for (var key in ImageSrcCollection.keys()) {
-                MODULE.resources.asyncImageLoader.loadImage(key,
-                    ImageSrcCollection.get(key));
-            }
-        };
-    
-    /**
-     * Loads images asynchronously. Alternative form of {@link
-        * tcc.resources.asyncImageLoader.loadImages}, this method takes an
-     * image object array and a src string array.
-     *
-     * @param {!Image[]} imageObjectArray
-     * @param {!String[]} srcStringArray
-     *
-     * @memberOf tcc.resources.asyncImageLoader
-     * @see tcc.resources.asyncImageLoader.loadImages
-     */
-    MODULE.resources.asyncImageLoader.loadImages1 =
-        function (imageObjectArray, srcStringArray) {
-            // Return to caller if either of the parameters are null.
-            if (!(imageObjectArray && srcStringArray)) {
-                return;
-            }
-            
-            MODULE.resources.asyncImageLoader.loadImages(
-                // Creates new Image -> Src Map.
-                MODULE.resources.asyncImageLoader.newImageSrcCollection(
-                    imageObjectArray, srcStringArray));
-        };
     
     return MODULE;
 })(tcc || {});
