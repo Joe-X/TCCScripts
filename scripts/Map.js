@@ -53,6 +53,7 @@
         root.Map = factory();
     }
 }(this, function () {
+    "use strict";
     
     // Map constructor. This is a javascript pseudo-implementation of the Map
     // class defined in Java's Collections framework.

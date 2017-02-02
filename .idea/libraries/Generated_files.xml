@@ -3,12 +3,14 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/scripts/tcc.checktype.old.min.js" />
+        <item url="file://$PROJECT_DIR$/scripts/TypeChecker.min.js" />
         <item url="file://$PROJECT_DIR$/scripts/tcc.dynamicheader.old.min.js" />
         <item url="file://$PROJECT_DIR$/scripts/Map.min.js" />
         <item url="file://$PROJECT_DIR$/scripts/tcc.currentdate.old.min.js" />
         <item url="file://$PROJECT_DIR$/scripts/jquery-3.1.1.min.js" />
         <item url="file://$PROJECT_DIR$/scripts/tcc.debug.old.min.js" />
         <item url="file://$PROJECT_DIR$/scripts/tcc.asyncimageloader.old.min.js" />
+        <item url="file://$PROJECT_DIR$/scripts/tcc.map.old.min.js" />
         <item url="file://$PROJECT_DIR$/scripts/Dates.min.js" />
       </sourceFilesUrls>
     </properties>
@@ -17,6 +19,7 @@
       <root url="file://$PROJECT_DIR$/scripts/jquery-3.1.1.min.min.js" />
       <root url="file://$PROJECT_DIR$/scripts/temp.molarmassofgas.min.js" />
       <root url="file://$PROJECT_DIR$/scripts/tcc.checktype.old.min.js" />
+      <root url="file://$PROJECT_DIR$/scripts/TypeChecker.min.js" />
       <root url="file://$PROJECT_DIR$/scripts/tcc.dynamicheader.old.min.js" />
       <root url="file://$PROJECT_DIR$/scripts/Map.min.js" />
       <root url="file://$PROJECT_DIR$/scripts/tcc.currentdate.old.min.js" />
@@ -24,7 +27,7 @@
       <root url="file://$PROJECT_DIR$/scripts/tcc.debug.old.min.js" />
       <root url="file://$PROJECT_DIR$/scripts/tcc.asyncimageloader.old.min.js" />
       <root url="file://$PROJECT_DIR$/scripts/tcc.map.old.min.js" />
-      <root url="file://$PROJECT_DIR$/scripts/Dates.min.js" />
+      <root url="file://$PROJECT_DIR$/scripts/dates.min.js" />
     </CLASSES>
     <SOURCES />
   </library>

@@ -50,49 +50,49 @@ var tcc = (function (MODULE) {
             testType;
     }
     
-    MODULE.misc.checktype.isValueOfType = isValueOfType;
+    isValueOfType = isValueOfType;
     
-    MODULE.misc.checktype.isArray = function (testValue) {
+    isArray = function (testValue) {
         return isValueOfType(testValue, "Array");
     };
     
-    MODULE.misc.checktype.isBoolean = function (testValue) {
+    isBoolean = function (testValue) {
         return isValueOfType(testValue, "Boolean");
     };
     
-    MODULE.misc.checktype.isDate = function (testValue) {
+    isDate = function (testValue) {
         return isValueOfType(testValue, "Date");
     };
     
-    MODULE.misc.checktype.isFunction = function (testValue) {
+    isFunction = function (testValue) {
         return isValueOfType(testValue, "Function");
     };
     
-    MODULE.misc.checktype.isMap = function (testValue) {
+    isMap = function (testValue) {
         return isValueOfType(testValue, "Map");
     };
     
-    MODULE.misc.checktype.isNumber = function (testValue) {
+    isNumber = function (testValue) {
         return isValueOfType(testValue, "Number");
     };
     
-    MODULE.misc.checktype.isNull = function (testValue) {
+    isNull = function (testValue) {
         return isValueOfType(testValue, "Null");
     };
     
-    MODULE.misc.checktype.isObject = function (testValue) {
+    isObject = function (testValue) {
         return isValueOfType(testValue, "Object");
     };
     
-    MODULE.misc.checktype.isRegExp = function (testValue) {
+    isRegExp = function (testValue) {
         return isValueOfType(testValue, "RegExp");
     };
     
-    MODULE.misc.checktype.isString = function (testValue) {
+    isString = function (testValue) {
         return isValueOfType(testValue, "String");
     };
     
-    MODULE.misc.checktype.isUndefined = function (testValue) {
+    isUndefined = function (testValue) {
         return isValueOfType(testValue, "Undefined");
     };
     

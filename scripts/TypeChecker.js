@@ -29,10 +29,6 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-/*
- * Dates.js -> Custom Date utils.
- */
-
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD support. Register as an anonymous module.
@@ -50,47 +46,91 @@
         //      </script>
         // In this fashion, there can be an "alias" to the module in the
         // global scope.
-        root.dates = factory();
+        root.typechecker = factory();
     }
 }(this, function () {
+    "use strict";
     
-    var daysOfWeekStrings = ["Sunday", "Monday", "Tuesday", "Wednesday",
-        "Thursday", "Friday", "Saturday"];
-    
-    var monthsOfYearStrings = ["Janurary", "February", "March", "April", "May",
-        "June", "July", "August", "September", "October", "November",
-        "December"];
-    
-    function dayOfWeek() {
-        return (new Date()).getDay();
+    function getTypeAsString(testValue) {
+        // Calls <tt>Object.prototype.toString.call</tt> which returns a
+        // string representation of the type of the object like "[object
+        // ObjectType]" and then calls String's slice method to keep only
+        // the "ObjectType" string, removing the redundant "[object " and "]".
+        return Object.prototype.toString.call(testValue).slice(8, -1);
     }
     
-    function dayOfWeekAsString() {
-        return daysOfWeekStrings[dayOfWeek()];
+    function isValueOfBasicType(testValue, testType) {
+        return getTypeAsString(testValue) === testType;
     }
     
-    function monthOfYear() {
-        return (new Date()).getMonth();
+    function isArray(testValue) {
+        return isValueOfBasicType(testValue, "Array");
     }
     
-    function monthOfYearAsString() {
-        return monthsOfYearStrings[monthOfYear()];
+    function isBoolean(testValue) {
+        return isValueOfBasicType(testValue, "Boolean");
     }
     
-    function dayOfMonth() {
-        return (new Date()).getDate();
+    function isDate(testValue) {
+        return isValueOfBasicType(testValue, "Date");
     }
     
-    function year() {
-        return (new Date()).getFullYear();
+    function isFunction(testValue) {
+        return isValueOfBasicType(testValue, "Function");
+    }
+    
+    function isMap(testValue) {
+        if (!Map) {
+            return;
+        }
+        
+        if (testValue instanceof Map) {
+            return true;
+        }
+    }
+    
+    function isNumber(testValue) {
+        return isValueOfBasicType(testValue, "Number");
+    }
+    
+    function isNull(testValue) {
+        return isValueOfBasicType(testValue, "Null");
+    }
+    
+    function isObject(testValue) {
+        return isValueOfBasicType(testValue, "Object");
+    }
+    
+    function isRegExp(testValue) {
+        return isValueOfBasicType(testValue, "RegExp");
+    }
+    
+    function isString(testValue) {
+        return isValueOfBasicType(testValue, "String");
+    }
+    
+    function isUndefined(testValue) {
+        return isValueOfBasicType(testValue, "Undefined");
+    }
+    
+    function areBothSameType(testValue1, testValue2) {
+        return getTypeAsString(testValue1) === getTypeAsString(testValue2);
     }
     
     return {
-        dayOfWeek:           dayOfWeek,
-        dayOfWeekAsString:   dayOfWeekAsString,
-        monthOfYear:         monthOfYear,
-        monthOfYearAsString: monthOfYearAsString,
-        dayOfMonth:          dayOfMonth,
-        year:                year
-    };
+        _getTypeAsString:    getTypeAsString,
+        _isValueOfBasicType: isValueOfBasicType,
+        isArray:             isArray,
+        isBoolean:           isBoolean,
+        isDate:              isDate,
+        isFunction:          isFunction,
+        isMap:               isMap,
+        isNumber:            isNumber,
+        isNull:              isNull,
+        isObject:            isObject,
+        isRegExp:            isRegExp,
+        isString:            isString,
+        isUndefined:         isUndefined,
+        areBothSameType:     areBothSameType
+    }
 }));
