@@ -1,16 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c05cf325-ba57-4a88-b7c9-d7c77469d0f2" name="Default" comment="Created new Type-checking module. Modified existing scripts.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.MD" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/tcc.debug.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Generated_files.xml" />
+    <list default="true" id="c05cf325-ba57-4a88-b7c9-d7c77469d0f2" name="Default" comment="Remove invalid code from AsyncImageLoader. Needs implementation and fixing.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/tcc.asyncimageloader.1.0.0.js" afterPath="$PROJECT_DIR$/scripts/tcc.asyncimageloader.1.0.0.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/tcc.asyncimageloader.1.0.0.min.js" afterPath="$PROJECT_DIR$/scripts/tcc.asyncimageloader.1.0.0.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/tcc.asyncimageloader.1.0.0.min.js.map" afterPath="$PROJECT_DIR$/scripts/tcc.asyncimageloader.1.0.0.min.js.map" />
     </list>
     <ignored path="TCCScripts.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,8 +38,8 @@
       <file leaf-file-name="tcc.asyncimageloader.1.0.0.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/tcc.asyncimageloader.1.0.0.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="103" column="4" lean-forward="true" selection-start-line="103" selection-start-column="4" selection-end-line="103" selection-end-column="4" />
+            <state relative-caret-position="349">
+              <caret line="102" column="5" lean-forward="true" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -371,7 +363,7 @@
       <workItem from="1485242587727" duration="223000" />
       <workItem from="1485314894044" duration="1193000" />
       <workItem from="1485487883854" duration="747000" />
-      <workItem from="1485499094414" duration="5629000" />
+      <workItem from="1485499094414" duration="6179000" />
     </task>
     <task id="LOCAL-00001" summary="Added vcs.xml and workspace.xml files for WebStorm IDE.">
       <created>1485488210862</created>
@@ -387,11 +379,18 @@
       <option name="project" value="LOCAL" />
       <updated>1485502996757</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Remove invalid code from AsyncImageLoader. Needs implementation and fixing.">
+      <created>1485505438682</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1485505438682</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26774000" />
+    <option name="totallyTimeSpent" value="27324000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -452,7 +451,8 @@
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="Added vcs.xml and workspace.xml files for WebStorm IDE." />
     <MESSAGE value="Created new Type-checking module. Modified existing scripts." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created new Type-checking module. Modified existing scripts." />
+    <MESSAGE value="Remove invalid code from AsyncImageLoader. Needs implementation and fixing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove invalid code from AsyncImageLoader. Needs implementation and fixing." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -748,8 +748,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/tcc.asyncimageloader.1.0.0.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="103" column="4" lean-forward="true" selection-start-line="103" selection-start-column="4" selection-end-line="103" selection-end-column="4" />
+        <state relative-caret-position="349">
+          <caret line="102" column="5" lean-forward="true" selection-start-line="102" selection-start-column="5" selection-end-line="102" selection-end-column="5" />
           <folding />
         </state>
       </provider>
