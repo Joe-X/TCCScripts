@@ -29,6 +29,12 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+/*
+ * AsyncImageLoader.js -> loads images on a page asynchronously.
+ */
+
+// TODO test
+
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
         // AMD support. Register as an anonymous module.
@@ -46,89 +52,36 @@
         //      </script>
         // In this fashion, there can be an "alias" to the module in the
         // global scope.
-        root.typechecker = factory();
+        root.asyncImageLoader = factory();
     }
 }(this, function () {
     "use strict";
     
-    function getTypeAsString(testValue) {
-        // Calls <tt>Object.prototype.toString.call</tt> which returns a
-        // string representation of the type of the object like "[object
-        // ObjectType]" and then calls String's slice method to keep only
-        // the "ObjectType" string, removing the redundant "[object " and "]".
-        return Object.prototype.toString.call(testValue).slice(8, -1);
-    }
-    
-    function isValueOfBasicType(testValue, testType) {
-        return getTypeAsString(testValue) === testType;
-    }
-    
-    function isArray(testValue) {
-        return isValueOfBasicType(testValue, "Array");
-    }
-    
-    function isBoolean(testValue) {
-        return isValueOfBasicType(testValue, "Boolean");
-    }
-    
-    function isDate(testValue) {
-        return isValueOfBasicType(testValue, "Date");
-    }
-    
-    function isFunction(testValue) {
-        return isValueOfBasicType(testValue, "Function");
-    }
-    
-    function isMap(testValue) {
-        if (!Map) {
+    function loadImage(imageObject, imageSrc, imageContainer) {
+        if (!imageObject instanceof Image || typeof imageSrc !== "string") {
             return;
         }
         
-        return testValue instanceof Map;
+        imageObject.onload = function () {
+            imageContainer.appendChild(imageObject);
+        };
+        
+        imageObject.src = imageSrc;
     }
     
-    function isNumber(testValue) {
-        return isValueOfBasicType(testValue, "Number");
-    }
-    
-    function isNull(testValue) {
-        return isValueOfBasicType(testValue, "Null");
-    }
-    
-    function isObject(testValue) {
-        return isValueOfBasicType(testValue, "Object");
-    }
-    
-    function isRegExp(testValue) {
-        return isValueOfBasicType(testValue, "RegExp");
-    }
-    
-    function isString(testValue) {
-        return isValueOfBasicType(testValue, "String");
-    }
-    
-    function isUndefined(testValue) {
-        return isValueOfBasicType(testValue, "Undefined");
-    }
-    
-    function areBothSameType(testValue1, testValue2) {
-        return getTypeAsString(testValue1) === getTypeAsString(testValue2);
+    function loadImages(imageObjSrcContainerCollection) {
+        if (!imageObjSrcContainerCollection instanceof Map) {
+            return;
+        }
+        
+        for (var obj in imageObjSrcContainerCollection.keys()) {
+            loadImage(obj, imageObjSrcContainerCollection.get(obj)[0],
+                imageObjSrcContainerCollection.get(obj)[1])
+        }
     }
     
     return {
-        _getTypeAsString:    getTypeAsString,
-        _isValueOfBasicType: isValueOfBasicType,
-        isArray:             isArray,
-        isBoolean:           isBoolean,
-        isDate:              isDate,
-        isFunction:          isFunction,
-        isMap:               isMap,
-        isNumber:            isNumber,
-        isNull:              isNull,
-        isObject:            isObject,
-        isRegExp:            isRegExp,
-        isString:            isString,
-        isUndefined:         isUndefined,
-        areBothSameType:     areBothSameType
-    }
+        loadImage: loadImage,
+        loadImages: loadImages
+    };
 }));
